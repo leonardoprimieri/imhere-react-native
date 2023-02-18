@@ -23,19 +23,27 @@ export const homePageStyles = StyleSheet.create({
     color: '#fff',
     padding: 16,
     marginTop: 16,
-    fontSize: 16
+    fontSize: 16,
+    flex: 1,
+    marginRight: 12
   },
   button: {
-    backgroundColor: '#e83f5b',
+    backgroundColor: '#31cf67',
     height: 56,
     borderRadius: 4,
     marginTop: 16,
     alignItems: 'center',
     justifyContent: 'center',
+    width: 56
   },
   buttonText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold'
+  },
+  form: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between'
   }
 });
