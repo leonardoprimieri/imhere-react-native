@@ -1,4 +1,5 @@
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Participant } from "../../components";
 
 import { homePageStyles } from './home-screen-styles'
 
@@ -21,6 +22,9 @@ export const HomeScreen = () => {
         <TouchableOpacity style={homePageStyles.button} onPress={handleAddParticipant}>
           <Text style={homePageStyles.buttonText}>+</Text>
         </TouchableOpacity>
+      </View>
+      <View style={homePageStyles.participantView}>
+        <Participant />
       </View>
     </View>
   );

@@ -45,5 +45,8 @@ export const homePageStyles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between'
+  },
+  participantView: {
+    marginTop: 24,
   }
 });
