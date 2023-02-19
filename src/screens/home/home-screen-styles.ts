@@ -38,7 +38,7 @@ export const homePageStyles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: 'bold'
   },
   form: {
@@ -46,7 +46,9 @@ export const homePageStyles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between'
   },
-  participantView: {
-    marginTop: 24,
+  emptyList: {
+    color: '#fff',
+    marginTop: 30,
+    textAlign: 'center'
   }
 });
