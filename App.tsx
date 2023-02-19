@@ -1,8 +1,15 @@
+import { StatusBar } from "react-native";
 import { HomeScreen } from "./src/screens";
 
 const App = () => {
   return (
-    <HomeScreen />
+    <>
+      <StatusBar
+        translucent
+        barStyle="light-content"
+        backgroundColor="transparent" />
+      <HomeScreen />
+    </>
   );
 }
 

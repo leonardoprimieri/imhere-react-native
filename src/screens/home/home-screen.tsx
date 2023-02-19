@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FlatList, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Participant } from "../../components";
 
 import { homePageStyles } from './home-screen-styles'
@@ -8,13 +8,23 @@ export const HomeScreen = () => {
   const [participants, setParticipants] = useState(['Leonardo', 'João', 'Maria'])
 
   const handleAddParticipant = () => {
-    setParticipants(oldParticipants =>
-      [...oldParticipants, Math.random().toString(36).substring(7)])
+    if (participants.includes('João')) {
+      return Alert.alert('Ja', "João já está na lista")
+    }
   }
 
   const handleRemoveParticipant = (participant: string) => {
-    setParticipants(oldParticipants =>
-      oldParticipants.filter(item => item !== participant))
+    Alert.alert('Remover', `Deseja remover ${participant} da lista?`, [
+      {
+        text: 'Não',
+        style: 'cancel'
+      },
+      {
+        text: 'Sim',
+        onPress: () => setParticipants(oldParticipants =>
+          oldParticipants.filter(item => item !== participant))
+      },
+    ])
   }
 
   return (
