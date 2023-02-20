@@ -9,7 +9,9 @@ export const HomeScreen = () => {
   const [newParticipant, setNewParticipant] = useState('')
 
   const handleAddParticipant = () => {
-    setParticipants(prevState => [...prevState, newParticipant])
+    const sanitizedParticipant = newParticipant.trim()
+    if (!sanitizedParticipant) return Alert.alert('Campo vazio', 'Digite o nome do participante')
+    setParticipants(prevState => [...prevState, sanitizedParticipant])
     setNewParticipant('')
   }
 
