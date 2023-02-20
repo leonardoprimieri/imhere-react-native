@@ -9,7 +9,7 @@ export const HomeScreen = () => {
   const [newParticipant, setNewParticipant] = useState('')
 
   const handleAddParticipant = () => {
-    setParticipants(oldParticipants => [...oldParticipants, newParticipant])
+    setParticipants(prevState => [...prevState, newParticipant])
     setNewParticipant('')
   }
 
@@ -21,8 +21,8 @@ export const HomeScreen = () => {
       },
       {
         text: 'Sim',
-        onPress: () => setParticipants(oldParticipants =>
-          oldParticipants.filter(item => item !== participant))
+        onPress: () => setParticipants(prevState =>
+          prevState.filter(item => item !== participant))
       },
     ])
   }
