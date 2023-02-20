@@ -50,5 +50,8 @@ export const homePageStyles = StyleSheet.create({
     color: '#fff',
     marginTop: 30,
     textAlign: 'center'
+  },
+  participantsList: {
+    marginTop: 24
   }
 });

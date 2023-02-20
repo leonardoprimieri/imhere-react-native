@@ -5,12 +5,12 @@ import { Participant } from "../../components";
 import { homePageStyles } from './home-screen-styles'
 
 export const HomeScreen = () => {
-  const [participants, setParticipants] = useState(['Leonardo', 'João', 'Maria'])
+  const [participants, setParticipants] = useState<string[]>([])
+  const [newParticipant, setNewParticipant] = useState('')
 
   const handleAddParticipant = () => {
-    if (participants.includes('João')) {
-      return Alert.alert('Ja', "João já está na lista")
-    }
+    setParticipants(oldParticipants => [...oldParticipants, newParticipant])
+    setNewParticipant('')
   }
 
   const handleRemoveParticipant = (participant: string) => {
@@ -33,6 +33,8 @@ export const HomeScreen = () => {
       <Text style={homePageStyles.eventDate}>Sexta, {new Date().getDate()} de fevereiro de 2023</Text>
       <View style={homePageStyles.form}>
         <TextInput
+          value={newParticipant}
+          onChangeText={setNewParticipant}
           style={homePageStyles.input}
           placeholder="Nome do participante"
           placeholderTextColor='#6b6b6b'
@@ -42,6 +44,7 @@ export const HomeScreen = () => {
         </TouchableOpacity>
       </View>
       <FlatList
+        style={homePageStyles.participantsList}
         data={participants}
         keyExtractor={item => item}
         renderItem={({ item }) => (
